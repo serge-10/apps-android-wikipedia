@@ -48,6 +48,7 @@ workRuntimeKtx = "2.10.0"
 composeBom = "2025.01.01"
 composeActivity = "1.10.0"
 composeViewModel = "2.8.7"
+uiautomatorV18 = "2.2.0-alpha1"
 
 
 [libraries]
@@ -120,6 +121,7 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
 compose-view-model = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "composeViewModel" }
 compose-test = { module = "androidx.compose.ui:ui-test-junit4" }
+androidx-uiautomator-v18 = { group = "androidx.test.uiautomator", name = "uiautomator-v18", version.ref = "uiautomatorV18" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }

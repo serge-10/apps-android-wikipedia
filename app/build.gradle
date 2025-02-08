@@ -168,6 +168,9 @@ apply from: '../gradle/src/checkstyle.gradle'
 apply from: '../gradle/src/ktlint.gradle'
 
 dependencies {
+    implementation libs.androidx.uiautomator
+    implementation libs.androidx.uiautomator.v18
+
 
     // To keep the Maven Central dependencies up-to-date
     // use http://gradleplease.appspot.com/ or http://search.maven.org/.
