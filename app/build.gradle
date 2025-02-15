@@ -259,12 +259,15 @@ dependencies {
     testImplementation libs.mockwebserver
     testImplementation libs.hamcrest
     testImplementation libs.room.testing
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+
 
     androidTestImplementation libs.espresso.contrib
     androidTestImplementation libs.androidx.espresso.intents
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.room.testing
     androidTestUtil libs.androidx.orchestrator
+    androidTestImplementation("io.github.kakaocup:kakao:3.0.2")
 
     // Compose Library
     def composeBom = platform(libs.composeBom)

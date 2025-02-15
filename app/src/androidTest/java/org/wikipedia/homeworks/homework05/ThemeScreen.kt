@@ -5,6 +5,9 @@ import io.github.kakaocup.kakao.progress.KSeekBar
 import io.github.kakaocup.kakao.switch.KSwitch
 import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
+import org.hamcrest.CoreMatchers.allOf
+import org.hamcrest.Description
+import org.hamcrest.TypeSafeMatcher
 import org.wikipedia.R
 
 object ThemeScreen : KScreen<ThemeScreen>() {
@@ -43,6 +46,7 @@ object ThemeScreen : KScreen<ThemeScreen>() {
         withDrawable(R.drawable.ic_icon_reading_focus_mode)
     }
 
+
     val readingFocusModeSwitch = KSwitch {
         withId(R.id.theme_chooser_reading_focus_mode_switch)
     }
@@ -70,3 +74,4 @@ object ThemeScreen : KScreen<ThemeScreen>() {
         withId(R.id.theme_chooser_dark_mode_dim_images_switch)
     }
 }
+
