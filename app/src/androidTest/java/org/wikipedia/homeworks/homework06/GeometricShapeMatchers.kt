@@ -10,10 +10,15 @@ internal enum class Color {
     RED, BLUE, GREEN, YELLOW, BLACK, WHITE
 }
 
-internal class Shape(var sideLength: Float, var sides: Int, var color: Color)
+internal class Shape(var sideLength: Float,
+                     var sides: Int,
+                     var color: Color
+)
 
 // Matcher to check side length in a given range
-internal class SideLengthInRangeMatcher(private val min: Float, private val max: Float) :
+internal class SideLengthInRangeMatcher(private val min: Float,
+                                        private val max: Float
+) :
     TypeSafeMatcher<Shape>() {
     override fun matchesSafely(shape: Shape): Boolean {
         return shape.sideLength >= min && shape.sideLength <= max

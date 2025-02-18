@@ -267,7 +267,7 @@ dependencies {
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.room.testing
     androidTestUtil libs.androidx.orchestrator
-    androidTestImplementation("io.github.kakaocup:kakao:3.0.2")
+    androidTestImplementation("io.github.kakaocup:kakao:3.6.2")
 
     // Compose Library
     def composeBom = platform(libs.composeBom)
