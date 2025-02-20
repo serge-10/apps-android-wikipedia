@@ -282,6 +282,8 @@ dependencies {
     // Compose Test Library
     androidTestImplementation(libs.compose.test)
     androidTestImplementation(composeBom)
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.2'
+    androidTestImplementation 'io.github.kakaocup:kakao:3.0.6'
 }
 
 private setSigningConfigKey(config, Properties props) {

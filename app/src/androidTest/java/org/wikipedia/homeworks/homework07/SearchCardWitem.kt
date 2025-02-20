@@ -1,17 +1,21 @@
 package org.wikipedia.homeworks.homework07
 
 import android.view.View
-import androidx.test.espresso.DataInteraction
-import io.github.kakaocup.kakao.common.builders.ViewBuilder
-import io.github.kakaocup.kakao.recycler.KRecyclerItemTypeBuilder
-import io.github.kakaocup.kakao.recycler.KRecyclerView
+import io.github.kakaocup.kakao.image.KImageView
+import io.github.kakaocup.kakao.recycler.KRecyclerItem
+import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
-import org.wikipedia.exampies.KImageView
+import org.wikipedia.R
 
-class SearchCardWitem(matcher: Matcher<View>,
+class SearchCardViewItem(matcher: Matcher<View>) : KRecyclerItem<SearchCardViewItem>(matcher) {
+    val searchIcon = KImageView(matcher) {
+        withDrawable(R.drawable.ic_search_white_24dp)
+    }
+    val searchText = KTextView(matcher) {
+        withText(R.string.search_hint)
+    }
 
-) : KRecyclerView<SearchCardWitem>(Matcher) {
-    val searchIcon = KImageView(matcher){
-
+    val voiceIcon = KImageView(matcher) {
+        withId(R.id.voice_search_button)
     }
 }
