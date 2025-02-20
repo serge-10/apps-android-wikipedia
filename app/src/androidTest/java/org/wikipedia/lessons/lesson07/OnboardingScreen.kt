@@ -13,8 +13,8 @@ import com.kaspersky.kaspresso.screens.KScreen
 
 object OnboardingScreen : KScreen<OnboardingScreen>() {
 
-     val layoutId = R.layout.fragment_onboarding_pager
-     val viewClass = null
+     override val layoutId = R.layout.fragment_onboarding_pager
+     override val viewClass = null
 
     val slider = KViewPager2(
         builder = {

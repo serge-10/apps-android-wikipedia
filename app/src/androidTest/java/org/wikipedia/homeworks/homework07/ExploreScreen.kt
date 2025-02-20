@@ -20,7 +20,13 @@ object ExploreScreen : KScreen<ExploreScreen>() {
         },
         itemTypeBuilder = {
             itemType(::SearchCardViewItem)
-
+            itemType(::DayHeaderCardViewItem)
+            itemType(::AnnouncementCardViewItem)
+            itemType(::FeaturedArticleCardViewItem)
+            itemType(::TopReadCardViewItem)
+            itemType(::InTheNewsCardItem)
         }
     )
 }
+
+
