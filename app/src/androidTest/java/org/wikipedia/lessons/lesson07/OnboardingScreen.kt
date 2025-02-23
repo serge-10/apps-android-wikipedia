@@ -13,7 +13,11 @@ import com.kaspersky.kaspresso.screens.KScreen
 
 object OnboardingScreen : KScreen<OnboardingScreen>() {
 
-     override val layoutId = R.layout.fragment_onboarding_pager
+    val doneButton: Any = TODO()
+    val pageIndicator: Any = TODO()
+    val forwardButton: Any
+    val skipButton: Any = TODO()
+    override val layoutId = R.layout.fragment_onboarding_pager
      override val viewClass = null
 
     val slider = KViewPager2(

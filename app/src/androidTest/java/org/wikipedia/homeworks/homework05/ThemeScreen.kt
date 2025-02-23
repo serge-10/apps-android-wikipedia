@@ -9,6 +9,7 @@ import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 import org.wikipedia.R
+import org.wikipedia.lessons.lesson07.KScreen
 
 object ThemeScreen : KScreen<ThemeScreen>() {
 

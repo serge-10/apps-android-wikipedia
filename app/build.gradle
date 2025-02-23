@@ -38,7 +38,7 @@ android {
         applicationId 'org.wikipedia'
         minSdk 21
         targetSdk 35
-        versionCode 50519
+        versionCode 50517
         testApplicationId 'org.wikipedia.test'
         testInstrumentationRunner = "com.kaspersky.kaspresso.runner.KaspressoRunner"
         testInstrumentationRunnerArguments clearPackageData: 'true'
@@ -168,9 +168,6 @@ apply from: '../gradle/src/checkstyle.gradle'
 apply from: '../gradle/src/ktlint.gradle'
 
 dependencies {
-    implementation libs.androidx.uiautomator
-    implementation libs.androidx.uiautomator.v18
-
 
     // To keep the Maven Central dependencies up-to-date
     // use http://gradleplease.appspot.com/ or http://search.maven.org/.
@@ -259,15 +256,12 @@ dependencies {
     testImplementation libs.mockwebserver
     testImplementation libs.hamcrest
     testImplementation libs.room.testing
-    testImplementation 'org.hamcrest:hamcrest:2.2'
-
 
     androidTestImplementation libs.espresso.contrib
-    androidTestImplementation libs.androidx.espresso.intents
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.room.testing
+    androidTestImplementation libs.androidx.espresso.intents
     androidTestUtil libs.androidx.orchestrator
-    androidTestImplementation("io.github.kakaocup:kakao:3.6.2")
 
     // Compose Library
     def composeBom = platform(libs.composeBom)
@@ -282,9 +276,7 @@ dependencies {
     // Compose Test Library
     androidTestImplementation(libs.compose.test)
     androidTestImplementation(composeBom)
-    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.2'
-    androidTestImplementation 'io.github.kakaocup:kakao:3.0.6'
-    androidTestImplementation 'org.hamcrest:hamcrest:2.2'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.4'
 }
 
 private setSigningConfigKey(config, Properties props) {

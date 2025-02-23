@@ -2,6 +2,7 @@ package org.wikipedia.homeworks.homework06
 
 import org.hamcrest.Description
 import org.hamcrest.MatcherAssert
+import org.hamcrest.Matchers
 import org.hamcrest.TypeSafeMatcher
 import java.util.List
 
