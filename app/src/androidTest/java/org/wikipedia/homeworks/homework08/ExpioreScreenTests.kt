@@ -5,6 +5,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
+import org.wikipedia.exampies.withText
 import org.wikipedia.main.MainActivity
 
 class ExploreTestScreen : TestCase() {
@@ -163,7 +164,9 @@ class ExploreTestScreen : TestCase() {
                     addLanguageButton.click()
                 }
             }
+
         }
     }
+
 }
 
