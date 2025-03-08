@@ -6,15 +6,123 @@ import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.main.MainActivity
 
-class OnboardingUIAutomatorTest: TestCase() {
+class OnboardingUiAutomatorTest : TestCase() {
 
     @get:Rule
-    val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
+
+    val activityScenarioRule: ActivityScenarioRule<MainActivity> =
+        ActivityScenarioRule(MainActivity::class.java)
+
+    private val numSwipes = 3
+    private val selectedLanguage = "Deutsch"
+    /*
+    Языки для тестов: Español Аԥсшәа Монгол  Deutsch
+     */
 
     @Test
-    fun checkImageIsView(){
-        run{
-           OnboardingUISccren.image.isDisabled()
+    fun checkMainBlock() {
+        repeat(numSwipes) {
+            run {
+                step("Проверяем наличие изображения") {
+                    OnboardingUIScreen.image.isDisplayed()
+                }
+                step("Проверяем наличие заголовка") {
+                    OnboardingUIScreen.primaryTitle.isDisplayed()
+                }
+                step("Проверям наличие описания") {
+                    OnboardingUIScreen.secondaryTitle.isDisplayed()
+                }
+                step("Свайпаем на следующую страницу") {
+                    OnboardingUIScreen.viewPager.swipeLeft()
+                }
+            }
+        }
+    }
+
+    @Test
+    fun checkLanguageBlock() {
+        run {
+            step("Проверяем отображение на первом экране блока языков") {
+                OnboardingUIScreen.languageBlock.isDisplayed()
+            }
+        }
+    }
+
+    @Test
+    fun checkNavigationButtons() {
+        repeat(numSwipes) { index ->
+            run {
+                step("Проверяем наличие кнопки 'Skip'") {
+                    OnboardingUIScreen.skipButton.isDisplayed()
+                    OnboardingUIScreen.skipButton.isClickable()
+                }
+                step("Проверяем наличие блока отображения страницы") {
+                    OnboardingUIScreen.pageIndicator.isDisplayed()
+
+                }
+                step(
+                    "Проверяем наличие кнопки 'Contunue' на всех экранах кроме " +
+                            "последнего"
+                ) {
+                    if (index <= 2) {
+                        OnboardingUIScreen.continueButton.isDisplayed()
+                        OnboardingUIScreen.continueButton.isClickable()
+                    } else {
+                        OnboardingUIScreen.continueButton.isNotDisplayed()
+                    }
+                }
+                step(
+                    "Проверяем отсутствие кнопки 'Get Started' на всех экранах кроме " +
+                            "последнего"
+                ) {
+                    if (index <= 2) {
+                        OnboardingUIScreen.getStartedButton.isNotDisplayed()
+
+                    } else {
+                        OnboardingUIScreen.getStartedButton.isDisplayed()
+                        OnboardingUIScreen.getStartedButton.isClickable()
+                    }
+                }
+                step("Свайпаем на следующую страницу") {
+                    OnboardingUIScreen.viewPager.swipeLeft()
+                }
+            }
+        }
+    }
+
+    @Test
+    fun addLanguageTest() {
+        run {
+            step("Кликаем кнопку 'Add or edit language' на главном экране") {
+                OnboardingUIScreen.addLanguageButton.click()
+            }
+            step("Кликаем кнопку 'Add language' на экране Wikipedia Languges") {
+                WikipediaLanguages.addLanguageText.click()
+            }
+            step(
+                "Выбираем язык - определяется в переменной selectedLanguage в "
+            ) {
+                AddLanguageScreen.languageContainer.scrollToStart()
+                val langName =
+                    AddLanguageScreen.languageNameWithText(selectedLanguage)
+
+                flakySafely(timeoutMs = 5000) {
+                    langName.isDisplayed()
+                    AddLanguageScreen.languageContainer.scrollToView(langName)
+                }
+                langName.click()
+            }
+            step("Возвращаемся на главную страницу") {
+                WikipediaLanguages.navigateUpButton.click()
+            }
+            step("Проверяем наличие соответствующего языка на главной странице") {
+                OnboardingUIScreen.languageList.scrollToEnd()
+                val langItem =
+                    OnboardingUIScreen.languageItemWithText(selectedLanguage)
+                OnboardingUIScreen.languageList.scrollToView(langItem)
+                langItem.isDisplayed()
+                langItem.containsText(selectedLanguage)
+            }
         }
     }
 }
