@@ -8,6 +8,10 @@ import io.github.kakaocup.kakao.toolbar.KToolbar
 import org.wikipedia.R
 
 object NewsPage: KScreen<NewsPage>() {
+    val errorView: Any
+        get() {
+            TODO()
+        }
     override val layoutId = null
     override val viewClass = null
 
