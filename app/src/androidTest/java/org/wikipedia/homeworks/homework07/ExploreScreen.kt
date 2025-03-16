@@ -7,6 +7,10 @@ import org.wikipedia.R
 import org.wikipedia.feed.view.FeedView
 
 object ExploreScreen : KScreen<ExploreScreen>() {
+    fun openRandomArticle() {
+        TODO("Not yet implemented")
+    }
+
     override val layoutId = R.layout.fragment_feed
     override val viewClass = FeedView::class.java
 
