@@ -7,20 +7,19 @@ import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.feed.announcement.AnnouncementCardView
 
-class AnnouncementCardViewItem(matcher: Matcher<View>) :
-    KRecyclerItem<AnnouncementCardViewItem>(matcher) {
-
-    val announcementImage = KImageView(matcher) {
+class AnnouncementCardViewItem(matcher: Matcher<View>) : KRecyclerItem<AnnouncementCardView>(matcher) {
+    val announcementImage = KImageView(matcher){
         withId(R.id.view_announcement_header_image)
     }
-    val announcementText = KTextView(matcher) {
+    val announcementText = KTextView(matcher){
         withId(R.id.view_announcement_text)
     }
-    val announcementCustomizeButton = KButton(matcher) {
+    val announcementCustomizeButton = KButton(matcher){
         withId(R.id.view_announcement_action_positive)
     }
-    val announcementGotItButton = KButton(matcher) {
+    val announcementGoItButton = KButton(matcher){
         withId(R.id.view_announcement_action_negative)
     }
 }

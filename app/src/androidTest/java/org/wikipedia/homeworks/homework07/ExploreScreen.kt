@@ -5,12 +5,9 @@ import io.github.kakaocup.kakao.image.KImageView
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import org.wikipedia.R
 import org.wikipedia.feed.view.FeedView
+import org.wikipedia.homeworks.homework09.InTheNewsViewItem
 
 object ExploreScreen : KScreen<ExploreScreen>() {
-    fun openRandomArticle() {
-        TODO("Not yet implemented")
-    }
-
     override val layoutId = R.layout.fragment_feed
     override val viewClass = FeedView::class.java
 
@@ -26,11 +23,9 @@ object ExploreScreen : KScreen<ExploreScreen>() {
             itemType(::SearchCardViewItem)
             itemType(::DayHeaderCardViewItem)
             itemType(::AnnouncementCardViewItem)
-            itemType(::FeaturedArticleCardViewItem)
-            itemType(::TopReadCardViewItem)
-            itemType(::InTheNewsCardItem)
+            itemType(::TopReadItem)
+            itemType(::InTheNewsViewItem)
+            itemType(::FeaturedArticleItem)
         }
     )
 }
-
-

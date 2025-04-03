@@ -7,11 +7,12 @@ import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
 
-class NewsCardItem(matcher: Matcher<View>) : KRecyclerItem<NewsCardItem>(matcher) {
-    val newsCardImage = KImageView(matcher) {
+class NewsCardViewItem(matcher: Matcher<View>) : KRecyclerItem<NewsCardViewItem>(matcher) {
+    val newsCardImage = KImageView(matcher){
         withId(R.id.horizontal_scroll_list_item_image)
     }
-    val newsCardText = KTextView(matcher) {
+    val newsCardTExt = KTextView(matcher) {
         withId(R.id.horizontal_scroll_list_item_text)
     }
+
 }

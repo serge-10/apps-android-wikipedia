@@ -13,16 +13,12 @@ class OnboardingPagerItem(
     matcher: Matcher<View>
 ) : KViewPagerItem<OnboardingPagerItem>(matcher) {
 
-    val wikiLogo = KImageView(matcher){
+    val logoImage = KImageView(matcher){
         withId(R.id.imageViewCentered)
     }
 
-    val textTitle = KTextView(matcher){
+    val titleHeader = KTextView(matcher){
         withId(R.id.primaryTextView)
-    }
-
-    val secondTextTitle = KTextView(matcher){
-        withId(R.id.secondaryTextView)
     }
 
     val languages = KRecyclerView(
@@ -31,7 +27,7 @@ class OnboardingPagerItem(
             withId(R.id.languageList)
         },
         itemTypeBuilder = {
-            itemType(::OptionLanguageItem)
+            itemType(::LanguagesListItem)
         }
     )
     val addLanguageButton = KButton(matcher){

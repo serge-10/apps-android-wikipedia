@@ -2,7 +2,8 @@ package org.wikipedia.views
 
 import android.content.Context
 import android.net.Uri
-import android.util.AttributeSet
+import android.os.Parcel
+import android.os.Parcelable
 import android.util.Pair
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,9 @@ import org.wikipedia.util.L10nUtil
 import org.wikipedia.util.StringUtil
 import org.wikipedia.util.TransitionUtil
 
-class WikiArticleCardView constructor(context: Context, attrs: AttributeSet? = null) : ConstraintLayout(context, attrs) {
+class WikiArticleCardView(context: Context, attrs: (() -> Unit)? = null) : ConstraintLayout(
+    context
+) {
 
     val binding = ViewWikiArticleCardBinding.inflate(LayoutInflater.from(context), this)
 
@@ -58,4 +61,5 @@ class WikiArticleCardView constructor(context: Context, attrs: AttributeSet? = n
         binding.articleDivider.visibility = View.GONE
         L10nUtil.setConditionalLayoutDirection(this, title.wikiSite.languageCode)
     }
+
 }

@@ -7,31 +7,27 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
-import org.wikipedia.homeworks.homework07.NewsCardItem
 
-class NewsCardItems(matcher: Matcher<View>) : KRecyclerItem<NewsCardItem>(matcher) {
+class NewsStoryItemView(matcher: Matcher<View>) : KRecyclerItem<NewsStoryItemView>(matcher){
 
-    val newsCardNumber = KView(matcher){
-        withId(R.id.view_list_card_number)
-    }
 
-    val newsCardItemTitle = KTextView(matcher){
+    val listCardItemTitle = KTextView(matcher) {
         withId(R.id.view_list_card_item_title)
     }
 
-    val newsCardItemSubtitle = KTextView(matcher){
+    val listCardItemSubtitle = KTextView(matcher) {
         withId(R.id.view_list_card_item_subtitle)
     }
 
-    val newsCardItemGraph = KView(matcher){
+    val listCardItemGraph = KTextView(matcher) {
         withId(R.id.view_list_card_item_graph)
     }
 
-    val newsCardItemPageViews = KTextView(matcher){
+    val listCardItemPageView = KTextView(matcher) {
         withId(R.id.view_list_card_item_pageviews)
     }
 
-    val newsCardItemImage = KImageView(matcher){
+    val cardItemImage = KImageView(matcher) {
         withId(R.id.view_list_card_item_image)
     }
 }

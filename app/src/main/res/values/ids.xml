@@ -19,4 +19,10 @@
     <item name="page_categories" type="id" />
     <item name="page_edit_article" type="id" />
     <item name="page_view_on_map" type="id" />
+    <item name="view_list_card_number" type="id" />
+    <item name="view_list_card_item_title" type="id" />
+    <item name="view_list_card_item_image" type="id" />
+    <item name="view_list_card_item_subtitle" type="id" />
+    <item name="view_list_card_item_graph" type="id" />
+    <item name="view_list_card_item_pageviews" type="id" />
 </resources>

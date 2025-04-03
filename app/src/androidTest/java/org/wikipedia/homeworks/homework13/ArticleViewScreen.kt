@@ -1,5 +1,6 @@
 package org.wikipedia.homeworks.homework13
 
+import androidx.test.espresso.web.webdriver.Locator
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.web.KWebView
 import org.wikipedia.R

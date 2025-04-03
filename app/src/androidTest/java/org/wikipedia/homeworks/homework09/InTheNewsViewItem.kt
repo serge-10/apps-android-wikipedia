@@ -1,4 +1,4 @@
-package org.wikipedia.homeworks.homework07
+package org.wikipedia.homeworks.homework09
 
 import android.view.View
 import io.github.kakaocup.kakao.image.KImageView
@@ -8,24 +8,23 @@ import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
 
-class TopReadItem(matcher: Matcher<View>) : KRecyclerItem<TopReadItem>(matcher) {
-    val topReadHeaderTitle = KTextView(matcher) {
+class InTheNewsViewItem(matcher: Matcher<View>) : KRecyclerItem<InTheNewsViewItem>(matcher) {
+
+    val newsHeader = KTextView(matcher) {
         withId(R.id.view_card_header_title)
     }
-    val languageCode = KTextView(matcher) {
-        withId(R.id.langCodeText)
-    }
-    val imageMenu = KImageView(matcher) {
+
+    val newsCustomizeFeedOptions = KImageView(matcher) {
         withId(R.id.view_list_card_header_menu)
     }
 
-    val cardViewItems = KRecyclerView(
+    val newsCardItems = KRecyclerView(
         parent = matcher,
         builder = {
-            withId(R.id.view_list_card_list)
+            withId(R.id.news_cardview_recycler_view)
         },
         itemTypeBuilder = {
-            itemType(::TopReadCardViewItem)
+            itemType(::NewsCardViewItem)
         }
     )
 }
