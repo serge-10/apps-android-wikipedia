@@ -97,12 +97,12 @@ import java.util.Locale
 //                device.language.switchInApp(Locale.GERMAN)
 //                val navLabel = device.uiDevice.findObject(
 //                    UiSelector().resourceId("org.wikipedia.alpha:id/navigation_bar_item_large_label_view")
-////                )
-////                Assert.assertEquals("Entdecken", navLabel.text)
-////            }
-////            step("Проверяем, что сейчас активна MainActivity") {
-////                device.activities.isCurrent(MainActivity::class.java)
-////            }
+//                )
+//                Assert.assertEquals("Entdecken", navLabel.text)
+//            }
+//            step("Проверяем, что сейчас активна MainActivity") {
+//                device.activities.isCurrent(MainActivity::class.java)
+//            }
 //        }
 //    }
 //}
