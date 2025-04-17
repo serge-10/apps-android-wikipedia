@@ -13,6 +13,10 @@ import com.kaspersky.kaspresso.screens.KScreen
 
 object OnboardingScreen : KScreen<OnboardingScreen>() {
 
+    val skipBtn: Any
+        get() {
+            TODO()
+        }
     val doneButton: Any = TODO()
     val pageIndicator: Any = TODO()
     val forwardButton: Any
