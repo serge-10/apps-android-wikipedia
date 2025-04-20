@@ -1,13 +1,10 @@
 package org.wikipedia.homeworks.homework13
 
-import androidx.test.espresso.web.webdriver.Locator
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import org.junit.Rule
 import org.junit.Test
-import org.wikipedia.homeworks.homework07.ExploreScreen
-import org.wikipedia.homeworks.homework07.SearchCardViewItem
 import org.wikipedia.homeworks.homework08.OnboardingScreen
 import org.wikipedia.homeworks.homework19.Steps
 import org.wikipedia.homeworks.homework19.steps

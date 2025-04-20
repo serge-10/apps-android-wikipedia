@@ -9,7 +9,9 @@ import org.hamcrest.Matcher
 import org.wikipedia.R
 import org.wikipedia.feed.announcement.AnnouncementCardView
 
-class AnnouncementCardViewItem(matcher: Matcher<View>) : KRecyclerItem<AnnouncementCardView>(matcher) {
+class AnnouncementCardViewItem(matcher: Matcher<View>) :
+    KRecyclerItem<AnnouncementCardView>(matcher) {
+
     val announcementImage = KImageView(matcher){
         withId(R.id.view_announcement_header_image)
     }
