@@ -1,10 +1,9 @@
 package org.wikipedia.homeworks.homework20
 
 import io.github.kakaocup.kakao.common.views.KView
-import io.github.kakaocup.kakao.text.KButton
 import org.wikipedia.R
-import org.wikipedia.homeworks.tools.NamedKScreen
-import org.wikipedia.homeworks.tools.setName
+import io.github.kakaocup.kakao.text.KButton as KButton1
+
 
 object NewOnboardingScreen : NamedKScreen<NewOnboardingScreen>() {
     override val screenName = "Онбординг"
@@ -12,8 +11,8 @@ object NewOnboardingScreen : NamedKScreen<NewOnboardingScreen>() {
     override val viewClass: Class<*>? = null
 
 
-    val skipButton: KButton by lazy {
-        KButton {
+    val skipButton: KButton1 by lazy {
+        KButton1 {
             withId(R.id.fragment_onboarding_skip_button)
         }.setName(withParent("Кнопка 'Skip'"))
     }
@@ -24,14 +23,14 @@ object NewOnboardingScreen : NamedKScreen<NewOnboardingScreen>() {
         }.setName(withParent("Индикатор страницы"))
     }
 
-    val forwardButton: KButton by lazy {
-        KButton {
+    val forwardButton: KButton1 by lazy {
+        KButton1 {
             withId(R.id.fragment_onboarding_forward_button)
         }.setName(withParent("Кнопка 'Forward'"))
     }
 
-    val doneButton: KButton by lazy {
-        KButton {
+    val doneButton: KButton1 by lazy {
+        KButton1 {
             withId(R.id.fragment_onboarding_done_button)
         }.setName(withParent("Кнопка 'Done'"))
     }

@@ -5,10 +5,10 @@ import org.wikipedia.homeworks.homework07.AnnouncementCardViewItem
 import org.wikipedia.homeworks.homework07.SearchCardViewItem
 import org.wikipedia.homeworks.homework20.ExploreScreenNew
 import org.wikipedia.homeworks.homework20.NamedKScreen
-import org.wikipedia.homeworks.tools.findByID
-import org.wikipedia.homeworks.tools.getName
-import org.wikipedia.homeworks.tools.invokeByID
-import org.wikipedia.homeworks.tools.setName
+import org.wikipedia.homeworks.findByID
+import org.wikipedia.homeworks.getName
+import org.wikipedia.homeworks.invokeByID
+
 
 fun ExploreScreenNew.searchCard(
     targetIndex: Int,

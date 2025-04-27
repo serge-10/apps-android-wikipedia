@@ -3,7 +3,6 @@ package org.wikipedia.homeworks.homework20
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.components.alluresupport.withForcedAllureSupport
-import com.kaspersky.components.kautomator.system.UiSystem.click
 import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
