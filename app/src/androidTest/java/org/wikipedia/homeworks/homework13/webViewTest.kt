@@ -27,7 +27,7 @@ class WebViewTest : TestCase() {
     fun isVisible(item : BaseAssertions) {
 
         run {
-            val steps = Steps(this)
+            val steps = Steps<Any>(this)
             steps.click(OnboardingScreen.skipButton, "Кнопка skip")
         }
     }

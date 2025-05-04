@@ -9,28 +9,31 @@ import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
 
-class OnboardingPagerItem(
-    matcher: Matcher<View>
-) : KViewPagerItem<OnboardingPagerItem>(matcher) {
-
-    val logoImage = KImageView(matcher){
+class OnboardingPageItem(matcher: Matcher<View>) : KViewPagerItem<OnboardingPageItem>(matcher) {
+    val imageView = KImageView(matcher) {
         withId(R.id.imageViewCentered)
     }
 
-    val titleHeader = KTextView(matcher){
+    val primaryInfoText = KTextView(matcher) {
         withId(R.id.primaryTextView)
     }
 
-    val languages = KRecyclerView(
+    val secondaryInfoText = KTextView(matcher) {
+        withId(R.id.secondaryTextView)
+    }
+
+    val items = KRecyclerView(
         parent = matcher,
         builder = {
-            withId(R.id.languageList)
+            withId(R.id.languagesList)
+            isDescendantOfA { withId(R.id.fragment_pager) }
         },
         itemTypeBuilder = {
-            itemType(::LanguagesListItem)
+            itemType(::LabelItem)
         }
     )
-    val addLanguageButton = KButton(matcher){
+
+    val addLanguageBtn = KButton(matcher) {
         withId(R.id.addLanguageButton)
     }
 }

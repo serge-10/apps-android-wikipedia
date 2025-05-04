@@ -6,4 +6,6 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 
 abstract class AllureSupportTest : TestCase(
     kaspressoBuilder = Kaspresso.Builder.withForcedAllureSupport()
-)
+) {
+    abstract fun actions(function: () -> Unit)
+}

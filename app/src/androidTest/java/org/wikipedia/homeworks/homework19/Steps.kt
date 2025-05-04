@@ -10,12 +10,12 @@ import io.github.kakaocup.kakao.edit.EditableActions
 import io.github.kakaocup.kakao.text.TextViewAssertions
 import org.wikipedia.homeworks.homework20.getName
 
-class Steps(private val testContext: TestContext<*>) {
+class Steps<T>(private val testContext: TestContext<*>) {
     private fun execute(stepDesc: String, actions: (StepInfo) -> Unit) {
         testContext.step(stepDesc, actions)
     }
 
-    operator fun invoke(function: Steps.() -> Unit) {
+    operator fun invoke(function: Steps<Any?>.() -> Unit) {
         function()
     }
 
