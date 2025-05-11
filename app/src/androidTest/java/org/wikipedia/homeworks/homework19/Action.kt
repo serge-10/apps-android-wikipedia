@@ -9,7 +9,7 @@ import io.github.kakaocup.kakao.edit.EditableActions
 import io.github.kakaocup.kakao.web.WebActions
 import org.wikipedia.homeworks.homework20.name
 import org.wikipedia.homeworks.homework24.KWebViewBaseElement
-import org.wikipedia.homeworks.homework24.KWebViewElement
+import kotlinx.coroutines.tasks.DirectExecutor.execute
 
 class Action(private val testContext: TestContext<*>) : Steps<Action>(testContext) {
 
