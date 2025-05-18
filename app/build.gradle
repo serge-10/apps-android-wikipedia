@@ -97,6 +97,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles 'test-proguard-rules.pro'
+            buildConfigField 'int','HOME_WORK_NUMBER','29'
         }
         release {
             minifyEnabled true
