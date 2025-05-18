@@ -8,7 +8,8 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import io.github.kakaocup.kakao.edit.EditableActions
 import io.github.kakaocup.kakao.text.TextViewAssertions
-
+import org.wikipedia.homeworks.homework29.Credentials
+import org.wikipedia.homeworks.homework29.LoginScreen
 
 class NamedSteps(val testContext: TestContext<*>) {
 
@@ -16,11 +17,9 @@ class NamedSteps(val testContext: TestContext<*>) {
         testContext.step(stepText, actions)
     }
 
-
     operator fun invoke(function: NamedSteps.() -> Unit) {
         function()
     }
-
 
     fun click(item: BaseActions) {
         testContext.step("Нажимаем на элемент '${item.getName()}'") {
@@ -40,7 +39,6 @@ class NamedSteps(val testContext: TestContext<*>) {
         }
     }
 
-
     fun disableNetwork() {
         testContext.step("Disabling Network") {
             testContext.device.network.toggleWiFi(false)
@@ -51,7 +49,6 @@ class NamedSteps(val testContext: TestContext<*>) {
         testContext.step("Enabling Network") {
             testContext.device.network.toggleWiFi(true)
         }
-
     }
 
     fun typeText(item: EditableActions, text: String) {
@@ -62,7 +59,7 @@ class NamedSteps(val testContext: TestContext<*>) {
 
     fun setChecked(item: CheckableActions, state: Boolean) {
         testContext.step("Setting checked status for ${(item as BaseActions).getName()} as $state") {
-            item.setChecked(true)
+            item.setChecked(state)
         }
     }
 
@@ -84,14 +81,13 @@ class NamedSteps(val testContext: TestContext<*>) {
         }
     }
 
-
     fun hasText(item: TextViewAssertions, text: String) {
         testContext.step("Check if ${(item as BaseActions).getName()} has text as follows: $text") {
             item.hasText(text)
         }
     }
 
-    fun hasAnyText(item: TextViewAssertions, text: String) {
+    fun hasAnyText(item: TextViewAssertions) {
         testContext.step("Check if ${(item as BaseActions).getName()} contains any text ") {
             item.hasAnyText()
         }
@@ -110,15 +106,16 @@ class NamedSteps(val testContext: TestContext<*>) {
     }
 
     fun isNotChecked(item: CheckableAssertions, name: String) {
-        testContext.step("Check if ${(item as BaseActions).getName()} is not checked :) ") {
+        testContext.step("Check if ${(item as BaseActions).getName()} is not checked") {
             item.isNotChecked()
         }
     }
 
     fun isDisplayed(item: BaseAssertions, name: String) {
-        testContext.step("Check if ${(item as BaseActions).getName()} is displayed ") {
+        testContext.step("Check if ${(item as BaseActions).getName()} is displayed") {
             item.isDisplayed()
         }
     }
+
 
 }
